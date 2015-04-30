@@ -1,0 +1,11 @@
+
+<h2>Sign up</h2>
+<form name="signup" action="/signup" method="POST">
+	<label for="email">Enter your email</label>
+	<input id="email" class="input" type="text" name="email" onblur="ValidateEmail()" placeholder="Enter your email address" required><br>
+	<label for="password">Enter a new password</label>
+	<input id="password" class="input" type="password" name="password" onblur="ValidatePassword()" placeholder="Enter a password" required><br>
+	<label for="reenterpassword">Re-enter your password</label>
+	<input id="reenterpassword" class="input" type="password" name="reenterpassword" onblur="ValidatePasswordTwo()" placeholder="Re enter your password" required><br>
+	<input class="submit" type="submit" value="submit this form">
+</form>
