@@ -7,8 +7,12 @@
 
 	
 	<div class="posted">
-		<h2 id="postedtitle"><%= @post.title %></h2>
-		<p id="postedbody"><%= @post.posts %></p>
+		
+		
+	<p> <% @post.each do |post| %></p>
+	<h4> <%= post.title %></h4>
+	<p>	<%= post.posts %></p>
+	<% end %>
 	</div>
 
 
