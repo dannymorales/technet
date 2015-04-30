@@ -8,14 +8,15 @@ body{
 	width: 100%;
 	background-color: #8390C4;
 	font-family: courier;
-	margin: 2%;
+/*	margin: 2%;*/
 	height: 100%;
+	margin: 0px;
 	/*padding-left: 20px;*/
 }
 
 nav{
 	width: 100%;
-	height: 60px;
+	height: 40px;
 	background-color:#3B0034;
 	opacity: .7;
 	position: fixed;
@@ -24,13 +25,18 @@ nav{
 	z-index: 9999;
 	padding-bottom: 20px;
 }
-
+.wrapper_nav{
+	margin-top: 60px;
+	background: url('/images/navlogo_1.gif');
+	height: 300px;
+}
 .div_footer{
 	height: 100px;
 	width:100%;
 	background-color:#3B0034;
 	left:0px;
 	width: 100%;
+	margin:0px;
 
 }
 
@@ -52,14 +58,30 @@ footer{
 
 /*_________LAYOUT ENDS________*/
 /*_________HOME________*/
+.welcome{
+	font-size:50px;
+	text-align: center;
+ }
+ span{
+	font-family: Times;
+	font-size: 20px;
+	font-style: italic;
+	color: white;
+}
+#technet{
+	font-family: Times;
+	font-size: 40px;
+	font-style: italic;
+	color: black;
+	z-index: ;
+}
 .wrapper_one_home{
 	width:100%;
 	height: 500px;
 	margin: 0 auto;
 	padding-top: 5px;
 	text-align:	left;
-
-
+	margin-left: 2%
 }
 .column_one_home{
  	width:24%;
