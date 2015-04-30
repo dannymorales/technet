@@ -16,6 +16,7 @@ GEM
       tzinfo (~> 1.1)
     arel (6.0.0)
     builder (3.2.2)
+    gp (0.0.1)
     i18n (0.7.0)
     json (1.8.2)
     minitest (5.6.1)
@@ -43,6 +44,7 @@ PLATFORMS
 
 DEPENDENCIES
   activerecord
+  gp
   rack-flash3
   rake
   sinatra

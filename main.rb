@@ -4,13 +4,18 @@ require "bundler/setup"
 require "rack-flash"
 require "./models"
 
-set :database, "sqlite3:maindatabase.sqlite3"
+configure(:development){set :database, "sqlite3:maindatabase.sqlite3"}
+
 set :sessions, true
 use Rack::Flash, sweep: true
 
 def current_user
 	session[:user_id] ? User.find(session[:user_id]) : nil
 end
+
+# def current_post
+# 	session[:post_id] ? Post.find(session[:post_id]) : nil
+# end
 
 get '/'	do
 	erb :home
@@ -37,6 +42,7 @@ end
 get '/members' do
 	#I get this_user from def this_user on session
 	@user = User.find(current_user.id)
+	@post = Post.all
 	erb :members
 end
 
@@ -67,6 +73,15 @@ end
 get '/user' do
 	@user = User.last
 	erb :show
+end
+
+get '/posts' do
+	erb :posts
+end
+
+post '/posts' do
+	Post.create(title: params[:title], posts: params[:posts])
+	redirect to('/members')
 end
 
 
