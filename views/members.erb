@@ -9,11 +9,13 @@
 	<div class="posted">
 		
 		
-	<p> <% @post.each do |post| %></p>
-	<h4> <%= post.title %></h4>
-	<p>	<%= post.posts %></p>
-	<% end %>
+		<p> <% @post.each do |post| %></p>
+		<h4> <%= post.title %></h4>
+		<p>	<%= post.posts %></p>
+		<% end %>
 	</div>
+
+	<a href="/logout">Logout</a>
 
 
 

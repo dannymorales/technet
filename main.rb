@@ -15,9 +15,9 @@ end
 
 
 get '/'	do
-	erb :home
+	@posts = Post.all
+	erb :home	
 end
-
 
 post '/login' do
 	my_user = User.find_by(email: params[:email])
@@ -33,7 +33,15 @@ end
 
 get '/login' do
 	erb :login
+end
 
+get '/logout' do
+  session.clear
+  redirect '/loggedout'
+end
+
+get '/loggedout' do
+	erb :loggedout
 end
 
 get '/members' do
@@ -48,7 +56,7 @@ get '/signup' do
 end
 
 post '/signup' do
-	User.create(email: params[:email], password: params[:password])
+	User.create(email: params[:email], password: params[:password], )
 	redirect to('/profile')
 end
 
@@ -77,7 +85,7 @@ get '/posts' do
 end
 
 post '/posts' do
-	Post.create(title: params[:title], posts: params[:posts])
+	Post.create(title: params[:title], posts: params[:posts], user_id: current_user.id )
 	redirect to('/members')
 end
 
