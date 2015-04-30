@@ -11,12 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150430052847) do
+ActiveRecord::Schema.define(version: 20150430154936) do
 
   create_table "categories", force: :cascade do |t|
     t.string "cname"
     t.string "ctype"
     t.string "cfunction"
+  end
+
+  create_table "categories_posts", id: false, force: :cascade do |t|
+    t.integer "category_id", null: false
+    t.integer "post_id",     null: false
   end
 
   create_table "categorization", id: false, force: :cascade do |t|
@@ -36,10 +41,12 @@ ActiveRecord::Schema.define(version: 20150430052847) do
   end
 
   create_table "posts", force: :cascade do |t|
-    t.string  "title"
-    t.date    "date"
-    t.text    "posts"
-    t.integer "user_id"
+    t.string   "title"
+    t.date     "date"
+    t.text     "posts"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "products", force: :cascade do |t|

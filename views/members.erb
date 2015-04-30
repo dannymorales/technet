@@ -1,3 +1,20 @@
 <h2>Welcome <%= @user.fname %> You can start posting</h2>
 
 <div class="notice"><%= flash[:notice] if flash[:notice] %></div>
+
+
+
+
+	
+	<div class="posted">
+		
+		
+	<p> <% @post.each do |post| %></p>
+	<h4> <%= post.title %></h4>
+	<p>	<%= post.posts %></p>
+	<% end %>
+	</div>
+
+
+
+
