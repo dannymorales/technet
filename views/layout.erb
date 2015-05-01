@@ -14,7 +14,6 @@
 	<div class="wrapper_nav">
 		<nav>
 			<ul>
-			
 			<!--loop for nav_bar -->
 				<% @nav.each do |key, value| %>
 				<li>
@@ -27,28 +26,7 @@
 				<% end %>
 			</ul>
 		</nav>
-		
 	</div>
-
-	<div> <!-- Div wrapper -->
-		<div class="wrapper_nav">
-			<nav>
-				<ul>
-				<!--loop for nav_bar -->
-					 <li class="wrapper_nav"> <% @nav.each do |key, value| %></li>
-					<li>
-					<!-- nav_bar linking with "value" -->
-					<a href=<%= value %> >
-						<!-- nav_bar naming with "key" -->
-					<%= key %>
-					</a>
-					</li>
-					<% end %>
-				</ul>
-			</nav>
-		</div>
-
-
 		<div>
 		<%= yield %>
 		</div>

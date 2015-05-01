@@ -303,3 +303,35 @@ textarea
 	width: 400px;
 	height:100px;
 }
+/*_________Members/add posts_ENDS_______*/
+/*_________Completed Profile_______*/
+.comp_profile{
+	margin:0 auto;
+	width: 600px;
+	height: 200px;
+	border-radius: 20px;
+	background-color: rgba(255, 255, 255,.7);
+}
+.comp_profile p{
+	padding-left:92px;
+	padding-top: 30px;
+	}
+/*_________Completed Profile___ENDS____*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
