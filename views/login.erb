@@ -8,18 +8,18 @@
 </form> -->
 
 
-<h2>Login</h2>
-<div class="alert"><%= flash[:alert] if flash[:alert] %></div>
+<h2  class="form_login">Login</h2>
+<div class="alert"><%= flash[:alert] if flash[:alert] %></div><br>
 
-<form name="login" action="/login" method="POST">
+<form  class="form_login_id"name="login" action="/login" method="POST">
 	<label for="name">Enter your username</label>
 	<input class="input" type="text" name="email" placeholder="email address" data-toggle="tooltip" data-placement="right"required><br>
 	<label for="password">Enter your password</label>
 	<input class="input" type="password" name="password" placeholder="enter your password" required><br>
-	<input class="submit" type="submit" value="submit this form">
+	<input class="submit" type="submit" value="Log in">
 </form>
 
-<p>Don't have an account? <a href="/signup" name="click here to signup">click here to signup</a></p>
+<p class="form_login">Don't have an account? <a href="/signup" name="click here to signup">click here to signup</a></p>
 
 
 
