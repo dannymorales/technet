@@ -2,16 +2,22 @@
 
 <div class="notice"><%= flash[:notice] if flash[:notice] %></div>
 
+<div>
+	<h2 class="h2_members_post">New Post</h2>
 
-
-	<% @posts.each do |post| %>
-
+	<div id="allposts">
+		<form id="post" action="/posts" method="POST">
+			<input id="title" class="input" type="text" name="title" placeholder="Enter post title"><br>
+			<textarea name="posts" id="posts" cols="100" rows="3"></textarea><br>
+			<input class="submit" type="submit" value="Post">
+		</form>
+	
+		<% @posts.each do |post| %>
 		<h4> <%= post.title %></h4>
 		<p>	<%= post.posts %></p>
-	
-	<% end %>
-
-	<a href="/logout">Logout</a>
+		<% end %>
+	</div>
+</div>
 
 
 
