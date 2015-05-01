@@ -15,6 +15,7 @@ end
 
 
 get '/'	do
+	@nav = {"Signup" => "/signup","Login" => "/login"}
 	erb :home
 end
 
@@ -32,11 +33,13 @@ post '/login' do
 end
 
 get '/login' do
+	@nav = {"Home" => "/", "Signup" => "/signup"}
 	erb :login
 
 end
 
 get '/members' do
+	@nav = {"Home" => "/", "logout" => "/logout"}
 	#I get this_user from def this_user on session
 	@user = User.find(current_user.id)
 	@post = Post.all
@@ -44,6 +47,7 @@ get '/members' do
 end
 
 get '/signup' do
+	@nav = {"Home" => "/", "login" => "/login"}
 	erb :signup
 end
 
@@ -53,6 +57,7 @@ post '/signup' do
 end
 
 get '/profile' do
+	@nav = {"Home" => "/", "logout" => "/logout"}
 	erb :profile
 end
 
@@ -63,6 +68,7 @@ post '/profile' do
 end
 
 get '/completedprofile' do
+	@nav = {"Home" => "/", "logout" => "/logout"}
 	@user = User.last
 	erb :completedprofile
 end

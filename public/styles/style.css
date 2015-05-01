@@ -22,13 +22,28 @@ nav{
 	position: fixed;
 	top: 0px;
 	left:0px;
-	z-index: 9999;
+	z-index: 1;
 	padding-bottom: 20px;
 }
 .wrapper_nav{
 	margin-top: 60px;
 	background: url('/images/navlogo_1.gif');
 	height: 300px;
+	list-style-type: none;
+
+}
+..wrapper_nav ul{
+	color: #ffffff;
+}	
+
+.wrapper_nav ul li a{
+	text-decoration: none;
+}
+.wrapper_nav ul li {
+	text-decoration: none;
+	display: inline;
+	font-size: 30px;
+
 }
 .div_footer{
 	height: 100px;
@@ -59,37 +74,53 @@ footer{
 /*_________LAYOUT ENDS________*/
 /*_________HOME________*/
 .welcome{
+	margin-top: 0px;
 	font-size:50px;
 	text-align: center;
+	font-family: Times;
+	font-style: italic;
  }
  span{
 	font-family: Times;
-	font-size: 20px;
+	font-size: 60px;
 	font-style: italic;
-	color: white;
+	color: #D5D5D5;
 }
 #technet{
 	font-family: Times;
-	font-size: 40px;
-	font-style: italic;
+	font-size: 80px;
 	color: black;
 	z-index: ;
 }
 .wrapper_one_home{
+	font-family: Times;
 	width:100%;
 	height: 500px;
 	margin: 0 auto;
 	padding-top: 5px;
 	text-align:	left;
-	margin-left: 2%
+	margin-left: 2%;
+	font-size:18px;
 }
+
 .column_one_home{
  	width:24%;
  	height: 500px;
  	display: inline-block;
  	float:left;
- 	
 	border-right: 1px solid black;
+	margin-left:-10px;
+}
+.column_one_home ul li a{
+ 	text-decoration: none;
+ 	color: #D5D5D5;
+}
+.column_one_home ul li a:hover{
+	font-size: 20px;
+}
+.column_one_home ul li{
+	color: #ffffff;
+	list-style-type: none;
 }
 .column_two_home{
 	width:50%;
