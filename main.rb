@@ -11,6 +11,7 @@ use Rack::Flash, sweep: true
 
 def current_user
 	session[:user_id] ? User.find(session[:user_id]) : nil
+	
 end
 
 get '/'	do
@@ -38,7 +39,9 @@ end
 
 get '/logout' do
   session.clear
-  redirect '/loggedout'
+  redirect '/'
+  flash[:notice] = "you have successfully logged out"
+
 end
 
 get '/loggedout' do
@@ -46,8 +49,11 @@ get '/loggedout' do
 end
 
 get '/members' do
+	if session[:user_id] == nil
+		flash[:alert] = "you must be logged in to access this page"
+		redirect to ('/login')
+	end
 	@nav = {"Home" => "/", "logout" => "/logout"}
-	#I get this_user from def this_user on session
 	@user = User.find_by(id: current_user.id)
 	@posts = @user.posts
 	erb :members
@@ -64,6 +70,10 @@ post '/signup' do
 end
 
 get '/profile' do
+	if session[:user_id] == nil
+		flash[:alert] = "you must be logged in to access this page"
+		redirect to ('/login')
+	end
 	@nav = {"Home" => "/", "logout" => "/logout"}
 	erb :profile
 end
@@ -71,7 +81,7 @@ end
 post '/profile' do
 	@user = User.last
 	@user.update(fname: params[:firstname], lname: params[:lastname], address: params[:address], city: params[:city], state: params[:state], zipcode: params[:zipcode], country: params[:country])
-	session[:user_id] = @user.id
+	# session[:user_id] = @user.id
 	User.find(session[:user_id])
 	redirect to('/completedprofile')
 end
@@ -95,6 +105,7 @@ post '/posts' do
 	Post.create(title: params[:title], posts: params[:posts], user_id: current_user.id)
 	redirect to('/members')
 end
+
 
 
 
