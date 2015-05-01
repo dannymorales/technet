@@ -175,12 +175,12 @@ background-color: rgba(0, 0, 0,.2);
 /*_________HOME ENDS________*/
 /*_________SIGN UP________*/
 .h2_signup{
-	font-size: 40px;
+	font-size: 25px;
 	text-align: center; 
 }
 .form_signup{
 	margin-left: 20%;
-	border: solid black;
+	border-radius: 10px;
 	width: 737px;
 	margin-bottom: 20px;
 }
@@ -194,7 +194,6 @@ form{
 }
 .form_text{
 	padding-top: 20px;
-	border-bottom: 1px solid black;
 }
 .submit{
 	width: 200px;	
@@ -205,10 +204,10 @@ form{
 	clear: both;
 	margin: 15px 30px 15px 250px;
 	padding: 10px;
-	border: 1px solid;
+	/*border: 1px solid;*/
 	border-radius: 5px;
 	background-color: rgba(0, 0, 0, .2);
-	border: 1px solid gray;
+	/*border: 1px solid gray;*/
 	font-family: courier;
 	font-weight: bold;
 	float:left;
