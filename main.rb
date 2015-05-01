@@ -13,7 +13,6 @@ def current_user
 	session[:user_id] ? User.find(session[:user_id]) : nil
 end
 
-
 get '/'	do
 	@posts = Post.all
 	erb :home	
@@ -46,8 +45,8 @@ end
 
 get '/members' do
 	#I get this_user from def this_user on session
-	@user = User.find(current_user.id)
-	@post = Post.all
+	@user = User.find_by(id: current_user.id)
+	@posts = @user.posts
 	erb :members
 end
 
@@ -56,7 +55,7 @@ get '/signup' do
 end
 
 post '/signup' do
-	User.create(email: params[:email], password: params[:password], )
+	User.create(email: params[:email], password: params[:password])
 	redirect to('/profile')
 end
 
@@ -67,6 +66,8 @@ end
 post '/profile' do
 	@user = User.last
 	@user.update(fname: params[:firstname], lname: params[:lastname], address: params[:address], city: params[:city], state: params[:state], zipcode: params[:zipcode], country: params[:country])
+	session[:user_id] = @user.id
+	User.find(session[:user_id])
 	redirect to('/completedprofile')
 end
 
@@ -85,8 +86,10 @@ get '/posts' do
 end
 
 post '/posts' do
-	Post.create(title: params[:title], posts: params[:posts], user_id: current_user.id )
+	Post.create(title: params[:title], posts: params[:posts], user_id: current_user.id)
 	redirect to('/members')
 end
+
+
 
 

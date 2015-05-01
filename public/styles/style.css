@@ -1,31 +1,161 @@
-body{
 
-	background: #fefbfc;
+html{
+	width: 100%;
+
+}
+/*_________LAYOUT________*/
+body{
+	width: 100%;
+	background-color: #8390C4;
 	font-family: courier;
-	margin: 2%;
+/*	margin: 2%;*/
+	height: 100%;
+	margin: 0px;
+	/*padding-left: 20px;*/
 }
 
+nav{
+	width: 100%;
+	height: 40px;
+	background-color:#3B0034;
+	opacity: .7;
+	position: fixed;
+	top: 0px;
+	left:0px;
+	z-index: 9999;
+	padding-bottom: 20px;
+}
+.wrapper_nav{
+	margin-top: 60px;
+	background: url('/images/navlogo_1.gif');
+	height: 300px;
+}
+.div_footer{
+	height: 100px;
+	width:100%;
+	background-color:#3B0034;
+	left:0px;
+	width: 100%;
+	margin:0px;
+
+}
+
+.icons{
+	padding-top: 30px;
+	text-align: center;
+	vertical-align: middle;
+}
+.icons img{
+	width: 48px;
+	height:48px;
+	padding-bottom: 17px;
+	/*border-radius: 5px;*/
+}
+footer{
+	width:100%;
+	margin:0 auto;
+}
+
+/*_________LAYOUT ENDS________*/
+/*_________HOME________*/
+.welcome{
+	font-size:50px;
+	text-align: center;
+ }
+ span{
+	font-family: Times;
+	font-size: 20px;
+	font-style: italic;
+	color: white;
+}
+#technet{
+	font-family: Times;
+	font-size: 40px;
+	font-style: italic;
+	color: black;
+	z-index: ;
+}
+.wrapper_one_home{
+	width:100%;
+	height: 500px;
+	margin: 0 auto;
+	padding-top: 5px;
+	text-align:	left;
+	margin-left: 2%
+}
+.column_one_home{
+ 	width:24%;
+ 	height: 500px;
+ 	display: inline-block;
+ 	float:left;
+ 	
+	border-right: 1px solid black;
+}
+.column_two_home{
+	width:50%;
+	height: 100%;
+	display: inline-block;
+ 	float:left;
+ 	text-align:center;
+
+}
+.column_three_home{
+	width:25%;
+	height: 100%;
+	display: inline-block;
+ 	float:left;
+}
+/*_________HOME ENDS________*/
+/*_________SIGN UP________*/
+.h2_signup{
+	font-size: 40px;
+	text-align: center;
+}
+.form_signup{
+	margin-left: 20%;
+	border: solid black;
+	width: 737px;
+	margin-bottom: 20px;
+}
+form{
+	background: url('/images/paper.jpg');	
+	background-repeat: no-repeat;
+	padding-left: 83px;
+	padding-top: 10px;
+}
+.form_text{
+	padding-top: 20px;
+}
+.submit{
+	width: 200px;	
+	line-height: 20px;
+	background: #fefbfc;
+/*	*/
+	font-size: 12px;
+	clear: both;
+	margin: 15px 30px 15px 250px;
+	padding: 10px;
+	border: 1px solid;
+	border-radius: 5px;
+	background-color: rgba(255, 255, 255, .7);
+	border: 1px solid gray;
+
+}
+form input .submit{
+	float:left;
+}
+
+/*_________SIGN UP ENDS________*/
 .input{
 	background: transparent;
-	height: 30px;
+	height: 25px;
 	width: 400px;
 	border: none;
 	font-size: 16px;
 	margin: 10px;
 	padding: 5px;
 }
-.submit{
-	width: 200px;
-	line-height: 20px;
-	background: #fefbfc;
-	border: none;
-	font-size: 12px;
-	clear: both;
-	margin: 15px 30px;
-	padding: 10px;
-	border: 1px solid;
-	border-radius: 5px;
-}
+
 .alert{
 
 	color: red;
