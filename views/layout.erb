@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head> 
 	<meta charset="UTF-8">
 	<title>Technet-Network built for woman</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0"/>
@@ -11,6 +11,7 @@
 	<script type="text/javascript" src="/javascript/scripts.js"></script>
 </head>
 <body>
+<<<<<<< HEAD
 	<div class="wrapper_nav">
 		<nav>
 			<ul>
@@ -29,29 +30,48 @@
 		</nav>
 		
 	</div>
+=======
+	<div> <!-- Div wrapper -->
+		<div class="wrapper_nav">
+			<nav>
+				<ul>
+				<!--loop for nav_bar -->
+					 <li class="wrapper_nav"> <% @nav.each do |key, value| %></li>
+					<li>
+					<!-- nav_bar linking with "value" -->
+					<a href=<%= value %> >
+						<!-- nav_bar naming with "key" -->
+					<%= key %>
+					</a>
+					</li>
+					<% end %>
+				</ul>
+			</nav>
+		</div>
+>>>>>>> 6ac3cf1cdac5cf8c6300da3f567eeef2299ac279
 
-<%= yield %>
-
-
-<footer>
-<div class="div_footer">
-	<div class="icons">
-		<a href="http://https://linkedin.com/" target="_blank">
-		<img src="/images/linkedinlogo.png" alt="Linkedin"/>
-		</a>
-
-		<a href="https://twitter.com/" target="_blank">
-		<img src="/images/twitterlogo.png"alt="Twitter"/>
-		</a>
-		<a href="https://instagram.com/" target="_blank">
-		<img src="/images/instalogo.png" alt="Instagramm"/>
-		</a>	
-		<a href="http://www.facebook.com" target="_blank">
-		<img src="/images/facebooklogo.png" alt="Facebook"/>
-		</a>
-	</div>
-</div> 
-</footer>	
+		<div>
+		<%= yield %>
+		</div>
+		<div class="div_footer">
+			<div class="icons">	
+				<footer>
+					<a href="http://https://linkedin.com/" target="_blank">
+					<img src="/images/linkedinlogo.png" alt="Linkedin"/>
+					</a>
+					<a href="https://twitter.com/" target="_blank">
+					<img src="/images/twitterlogo.png"alt="Twitter"/>
+					</a>
+					<a href="https://instagram.com/" target="_blank">
+					<img src="/images/instalogo.png" alt="Instagramm"/>
+					</a>	
+					<a href="http://www.facebook.com" target="_blank">
+					<img src="/images/facebooklogo.png" alt="Facebook"/>
+					</a>
+				</footer>
+			</div> <!-- Div icons -->
+		</div> <!-- Div _footer -->
+		</div>	<!-- Div wrapper -->
 </body>
 
 </html>
