@@ -32,7 +32,7 @@ nav{
 	list-style-type: none;
 
 }
-..wrapper_nav ul{
+.wrapper_nav ul{
 	color: #ffffff;
 }	
 
@@ -43,6 +43,7 @@ nav{
 	text-decoration: none;
 	display: inline;
 	font-size: 30px;
+	color: white;
 
 }
 .div_footer{
@@ -149,13 +150,15 @@ footer{
 	margin-bottom: 20px;
 }
 form{
-	background: url('/images/paper.jpg');	
+	/*background: url('/images/paper.jpg');	*/
 	background-repeat: no-repeat;
 	padding-left: 83px;
 	padding-top: 10px;
+	background-color: #D5D5D5;
 }
 .form_text{
 	padding-top: 20px;
+	border-bottom: 1px solid black;
 }
 .submit{
 	width: 200px;	
