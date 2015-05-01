@@ -1,6 +1,7 @@
 
 html{
 	width: 100%;
+	height:auto;
 
 }
 /*_________LAYOUT________*/
@@ -9,7 +10,7 @@ body{
 	background-color: #8390C4;
 	font-family: courier;
 /*	margin: 2%;*/
-	height: 100%;
+	height: auto;
 	margin: 0px;
 	/*padding-left: 20px;*/
 }
@@ -17,19 +18,21 @@ body{
 nav{
 	width: 100%;
 	height: 40px;
-	background-color:#3B0034;
-	opacity: .7;
+	background-color:rgba(59,0,52,.75);
+/*	opacity: .8;*/
 	position: fixed;
 	top: 0px;
 	left:0px;
-	z-index: 1;
+	z-index: 9999;
 	padding-bottom: 20px;
+	color: #ffffff; 
 }
 .wrapper_nav{
 	margin-top: 60px;
 	background: url('/images/navlogo_1.gif');
 	height: 300px;
 	list-style-type: none;
+	color: #ffffff; 
 
 }
 .wrapper_nav ul{
@@ -38,21 +41,28 @@ nav{
 
 .wrapper_nav ul li a{
 	text-decoration: none;
+	color: #986592;
+	transition:.3s;
+}
+.wrapper_nav ul li a:hover{
+	color:black;
+
 }
 .wrapper_nav ul li {
 	text-decoration: none;
 	display: inline;
-	font-size: 30px;
-	color: white;
-
+	font-size: 20px;
+	float: right;
+	margin-right:20px;
 }
+
 .div_footer{
-	height: 100px;
+	height: auto;
 	width:100%;
 	background-color:#3B0034;
 	left:0px;
-	width: 100%;
 	margin:0px;
+	clear:both;
 
 }
 
@@ -70,22 +80,25 @@ nav{
 footer{
 	width:100%;
 	margin:0 auto;
+	clear: both;
+
 }
 
 /*_________LAYOUT ENDS________*/
 /*_________HOME________*/
+
 .welcome{
-	margin-top: 0px;
+	margin-top: 50px;
 	font-size:50px;
 	text-align: center;
 	font-family: Times;
 	font-style: italic;
- }
+	margin-left:-20px; }
  span{
-	font-family: Times;
+	font-family: Helveticaƒ;
 	font-size: 60px;
 	font-style: italic;
-	color: #D5D5D5;
+	color: rgb(255, 255, 255);
 }
 #technet{
 	font-family: Times;
@@ -93,10 +106,13 @@ footer{
 	color: black;
 	z-index: ;
 }
+.topics{
+	font-family: Helvetica;
+	text-align: center;
+}
 .wrapper_one_home{
 	font-family: Times;
 	width:100%;
-	height: 500px;
 	margin: 0 auto;
 	padding-top: 5px;
 	text-align:	left;
@@ -105,35 +121,54 @@ footer{
 }
 
 .column_one_home{
- 	width:24%;
- 	height: 500px;
+ 	width:30%;
+ 	height: auto;
  	display: inline-block;
  	float:left;
-	border-right: 1px solid black;
 	margin-left:-10px;
+	margin-right: 50px;
 }
 .column_one_home ul li a{
  	text-decoration: none;
  	color: #D5D5D5;
 }
 .column_one_home ul li a:hover{
-	font-size: 20px;
+	transition:.5s;
 }
 .column_one_home ul li{
 	color: #ffffff;
 	list-style-type: none;
+	text-align: right;
+}
+.column_one_home ul li:hover{
+background-color: rgba(0, 0, 0,.2);
 }
 .column_two_home{
 	width:50%;
-	height: 100%;
+	height: auto;
 	display: inline-block;
  	float:left;
  	text-align:center;
-
+}
+.posts p {
+	font-style: italic;
+	background-color: rgba(255, 255, 255,.7);
+	text-align: left;
+	border-radius: 15px;
+	padding-left: 20px;
+}
+/*.posts p:hover{
+	background-color: rgba(255, 255, 255,.5);
+}*/
+#pspan{
+	font-size: 20px;
+	font-family: Arial;
+	color:#413E41;
+	font-style: normal;
 }
 .column_three_home{
 	width:25%;
-	height: 100%;
+	height: auto;
 	display: inline-block;
  	float:left;
 }
@@ -141,7 +176,7 @@ footer{
 /*_________SIGN UP________*/
 .h2_signup{
 	font-size: 40px;
-	text-align: center;
+	text-align: center; 
 }
 .form_signup{
 	margin-left: 20%;
@@ -153,8 +188,9 @@ form{
 	/*background: url('/images/paper.jpg');	*/
 	background-repeat: no-repeat;
 	padding-left: 83px;
-	padding-top: 10px;
+	/*padding-top: 10px;*/
 	background-color: #D5D5D5;
+	border-radius: 10px;
 }
 .form_text{
 	padding-top: 20px;
@@ -162,7 +198,7 @@ form{
 }
 .submit{
 	width: 200px;	
-	line-height: 20px;
+	line-height: 18px;
 	background: #fefbfc;
 /*	*/
 	font-size: 12px;
@@ -171,15 +207,48 @@ form{
 	padding: 10px;
 	border: 1px solid;
 	border-radius: 5px;
-	background-color: rgba(255, 255, 255, .7);
+	background-color: rgba(0, 0, 0, .2);
 	border: 1px solid gray;
-
+	font-family: courier;
+	font-weight: bold;
+	float:left;
+	margin-left:25%;
+	font-size: 20px;
+	margin-top: 5px;
+}
+.submit:hover{
+background-color: rgba(59,0,52,.75);
+color: rgba(255,255,255,.6);
 }
 form input .submit{
 	float:left;
+
 }
 
 /*_________SIGN UP ENDS________*/
+/*_________LOg in ________*/
+.alert{
+	font-size: 20px;
+	color:#A71414;
+	width:700px;
+	text-align: center;
+}
+.form_login{
+	width:700px;
+	margin-left: 20%;
+	clear: both;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	text-align: center;
+
+}
+.form_login_id{
+
+	width:700px;
+	margin-left: 20%;
+	background-color: rgba(255, 255, 255, .6);
+}
+/*_________LOg in ENDS________*/
 .input{
 	background: transparent;
 	height: 25px;
@@ -190,10 +259,7 @@ form input .submit{
 	padding: 5px;
 }
 
-.alert{
 
-	color: red;
-}
 #state{
 	width: 150px;
 	background: transparent;
