@@ -14,9 +14,10 @@ def current_user
 end
 
 get '/'	do
-	@posts = Post.all
-	erb :home	
-end
+	@posts = Post.all	
+	@nav = {"Signup" => "/signup","Login" => "/login"}
+	erb :home
+end	
 
 post '/login' do
 	my_user = User.find_by(email: params[:email])
@@ -31,6 +32,7 @@ post '/login' do
 end
 
 get '/login' do
+	@nav = {"Home" => "/", "Signup" => "/signup"}
 	erb :login
 end
 
@@ -44,6 +46,7 @@ get '/loggedout' do
 end
 
 get '/members' do
+	@nav = {"Home" => "/", "logout" => "/logout"}
 	#I get this_user from def this_user on session
 	@user = User.find_by(id: current_user.id)
 	@posts = @user.posts
@@ -51,6 +54,7 @@ get '/members' do
 end
 
 get '/signup' do
+	@nav = {"Home" => "/", "login" => "/login"}
 	erb :signup
 end
 
@@ -60,6 +64,7 @@ post '/signup' do
 end
 
 get '/profile' do
+	@nav = {"Home" => "/", "logout" => "/logout"}
 	erb :profile
 end
 
@@ -72,6 +77,7 @@ post '/profile' do
 end
 
 get '/completedprofile' do
+	@nav = {"Home" => "/", "logout" => "/logout"}
 	@user = User.last
 	erb :completedprofile
 end
