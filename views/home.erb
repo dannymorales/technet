@@ -1,40 +1,28 @@
 
-<p class="welcome">Welcome to <span id="technet">Technet</span></br><span>Network chanel designed for woman in tech</span></p>
+<p class="welcome">Welcome to <span id="technet">Technet</span></br><span>Network channel for woman in tech</span></p>
 <div class="wrapper_one_home">
-<<<<<<< HEAD
-	<div class= "column_one_home">
-	<h3>links</h3>
-	<p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-	proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
-	</div>
-	<div class= "column_two_home">	
-=======
 		<div class= "column_one_home">
-		<h3>News & Events</h3>
+		<h3 class="topics">News & Events</h3>
 			<ul>
-			<li><a href="#"> Lorem ipsum dolor sit amet,consectetur adipisicing </a></li></br>
-			<li><a href="#"> Lorem ipsum dolor sit amet,consectetur adipisicing </a></li></br>
-			<li><a href="#"> Lorem ipsum dolor sit amet,consectetur adipisicing </a></li></br>
-			<li><a href="#"> Lorem ipsum dolor sit amet,consectetur </a></li></br>
-			<li><a href="#"> Lorem ipsum dolor sit amet,consectetur adipisicing </a></li></br>
+			<li><a href="http://www.komonews.com/news/local/Volunteers-needed-to-help-teach-computer-science-students-301903171.html"> Volunteers needed to help teach computer science students </a></li></br>
+			<li><a href="http://www.bizjournals.com/dallas/blog/techflash/2015/04/words-of-wisdom-from-women-tech-leaders-at-at-t.html"> Words of wisdom from women tech leaders at AT&T, Verizon and Omni</a></li></br>
+			<li><a href="http://atlantaforward.blog.ajc.com/2015/04/29/women-in-leadership-faith-careers-justice/"> Women in leadership: Faith, careers, justice </a></li></br>
+			<li><a href="http://fortune.com/2015/05/01/pooja-sankar-pivotal-career-moment/"> How Sheryl Sandberg inspired me to start my own business </a></li></br>
+			<li><a href="http://www.forbes.com/sites/meghanbiro/2015/04/27/women-in-technology-why-its-good-for-everyone/"> Women In Technology: Why It's Good For Everyone </a></li></br>
 			</ul>
 		</div>
 	<div class= "column_two_home">
->>>>>>> master
-	<h3>Posts</h3>
+	<h3 class="topics">Posts</h3>
 		<div class="posts">
-			<p> <% @posts.each do |post| %></p>
-			<h4> <%= post.title %></h4>
-			<p>	<%= post.posts %></p>
+			<% @posts.each do |post| %>
+			<p> 
+				<span id="pspan"><%= post.title %></span><br>
+				<%= post.posts %></p>
 		<% end %>
 	</div>
 
 	</div>
-	<div class= "column_three_home">
-	<h3>login</h3>
-	</div>
+<!-- 	<div class= "column_three_home">
+	<h3 class="topics">login</h3>
+	</div> -->
 </div>
