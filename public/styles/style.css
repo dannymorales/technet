@@ -199,15 +199,12 @@ form{
 	width: 200px;	
 	line-height: 18px;
 	background: #fefbfc;
-/*	*/
 	font-size: 12px;
 	clear: both;
 	margin: 15px 30px 15px 250px;
 	padding: 10px;
-	/*border: 1px solid;*/
 	border-radius: 5px;
 	background-color: rgba(0, 0, 0, .2);
-	/*border: 1px solid gray;*/
 	font-family: courier;
 	font-weight: bold;
 	float:left;
@@ -215,13 +212,12 @@ form{
 	font-size: 20px;
 	margin-top: 5px;
 }
-.submit:hover{
+.submit:hover , #submit_profile:hover{
 background-color: rgba(59,0,52,.75);
 color: rgba(255,255,255,.6);
 }
 form input .submit{
 	float:left;
-
 }
 
 /*_________SIGN UP ENDS________*/
@@ -257,10 +253,53 @@ form input .submit{
 	margin: 10px;
 	padding: 5px;
 }
-
-
+/*_________Profile________*/
 #state{
 	width: 150px;
 	background: transparent;
 	border: none;
+}
+.form_profile{
+	width:100%;
+	clear: both;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	text-align: left;
+}
+.profile_h2{
+	text-align: center;
+}
+#submit_profile{
+	width: 200px;	
+	line-height: 18px;
+	background: #fefbfc;
+	font-size: 12px;
+	clear: both;
+	margin: 15px 30px 15px 250px;
+	padding: 10px;
+	border-radius: 5px;
+	background-color: rgba(0, 0, 0, .2);
+	font-family: courier;
+	font-weight: bold;
+	float:left;
+	margin-left:38%;
+	font-size: 20px;
+	margin-top: 5px;
+}
+/*_________Profile ends________*/
+/*_________Members/add posts________*/
+.h2_members_post{
+	text-align: center;
+}
+#post{
+	width:500px;
+	margin-left: 24%;
+	clear: both;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+textarea
+{
+	width: 400px;
+	height:100px;
 }
