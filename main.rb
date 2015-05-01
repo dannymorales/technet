@@ -13,12 +13,11 @@ def current_user
 	session[:user_id] ? User.find(session[:user_id]) : nil
 end
 
-
 get '/'	do
+	@posts = Post.all	
 	@nav = {"Signup" => "/signup","Login" => "/login"}
 	erb :home
-end
-
+end	
 
 post '/login' do
 	my_user = User.find_by(email: params[:email])
@@ -35,14 +34,22 @@ end
 get '/login' do
 	@nav = {"Home" => "/", "Signup" => "/signup"}
 	erb :login
+end
 
+get '/logout' do
+  session.clear
+  redirect '/loggedout'
+end
+
+get '/loggedout' do
+	erb :loggedout
 end
 
 get '/members' do
 	@nav = {"Home" => "/", "logout" => "/logout"}
 	#I get this_user from def this_user on session
-	@user = User.find(current_user.id)
-	@post = Post.all
+	@user = User.find_by(id: current_user.id)
+	@posts = @user.posts
 	erb :members
 end
 
@@ -64,6 +71,8 @@ end
 post '/profile' do
 	@user = User.last
 	@user.update(fname: params[:firstname], lname: params[:lastname], address: params[:address], city: params[:city], state: params[:state], zipcode: params[:zipcode], country: params[:country])
+	session[:user_id] = @user.id
+	User.find(session[:user_id])
 	redirect to('/completedprofile')
 end
 
@@ -83,8 +92,10 @@ get '/posts' do
 end
 
 post '/posts' do
-	Post.create(title: params[:title], posts: params[:posts])
+	Post.create(title: params[:title], posts: params[:posts], user_id: current_user.id)
 	redirect to('/members')
 end
+
+
 
 
