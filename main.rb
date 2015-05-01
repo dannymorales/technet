@@ -87,6 +87,10 @@ post '/profile' do
 end
 
 get '/completedprofile' do
+	if session[:user_id] == nil
+		flash[:alert] = "you must be logged in to access this page"
+		redirect to ('/login')
+	end
 	@nav = {"Home" => "/", "logout" => "/logout"}
 	@user = User.last
 	erb :completedprofile
