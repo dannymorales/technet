@@ -21,8 +21,6 @@ var password = $('#password').val();
 
 	if(password!="")
 {
-   
-
     if (password.length < 8 ||!(/[0-9]/).test(password)) 
     {   
         //alert(email)
