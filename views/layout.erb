@@ -11,11 +11,23 @@
 	<script type="text/javascript" src="/javascript/scripts.js"></script>
 </head>
 <body>
-<div class="wrapper_nav">
-<nav>
-	
-</nav>
-</div>
+	<div class="wrapper_nav">
+		<nav>
+			<ul>
+			<!--loop for nav_bar -->
+				<% @nav.each do |key, value| %>
+				<li>
+				<!-- nav_bar linking with "value" -->
+				<a href=<%= value %> >
+					<!-- nav_bar naming with "key" -->
+				<%= key %>
+				</a>
+				</li>
+				<% end %>
+			</ul>
+		</nav>
+		
+	</div>
 
 <%= yield %>
 
