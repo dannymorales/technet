@@ -15,18 +15,19 @@
 		<nav>
 			<ul>
 			<!--loop for nav_bar -->
-				<% @nav.each do |key, value| %>
+			<% @nav.each do |key, value| %>
 				<li>
 				<!-- nav_bar linking with "value" -->
-				<a href=<%= value %> >
+					<a href= <%= value %> >
 					<!-- nav_bar naming with "key" -->
-				<%= key %>
-				</a>
+					<%= key %>
+					</a>
 				</li>
-				<% end %>
+			<% end %>
 			</ul>
 		</nav>
 	</div>
+
 		<div>
 		<%= yield %>
 		</div>

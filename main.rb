@@ -11,12 +11,15 @@ use Rack::Flash, sweep: true
 
 def current_user
 	session[:user_id] ? User.find(session[:user_id]) : nil
-	
 end
 
 get '/'	do
-	@posts = Post.all	
-	@nav = {"Signup" => "/signup","Login" => "/login"}
+	if session[:user_id] == nil	
+	@nav = {"Home" => "/", "login" => "/login"}
+else
+	@nav = {"Home" => "/", "logout" => "/logout"}
+end
+	@posts = Post.all.order('created_at DESC')
 	erb :home
 end	
 
@@ -55,7 +58,7 @@ get '/members' do
 	end
 	@nav = {"Home" => "/", "logout" => "/logout"}
 	@user = User.find_by(id: current_user.id)
-	@posts = @user.posts
+	@posts = @user.posts.order('created_at DESC')
 	erb :members
 end
 
@@ -66,6 +69,8 @@ end
 
 post '/signup' do
 	User.create(email: params[:email], password: params[:password])
+	my_user = User.find_by(email: params[:email])
+	session[:user_id] = my_user.id
 	redirect to('/profile')
 end
 
@@ -79,12 +84,14 @@ get '/profile' do
 end
 
 post '/profile' do
-	@user = User.last
+	@user = User.find_by(id: current_user.id)
 	@user.update(fname: params[:firstname], lname: params[:lastname], address: params[:address], city: params[:city], state: params[:state], zipcode: params[:zipcode], country: params[:country])
-	# session[:user_id] = @user.id
+	session[:user_id] = @user.id
 	User.find(session[:user_id])
 	redirect to('/completedprofile')
 end
+
+
 
 get '/completedprofile' do
 	if session[:user_id] == nil
@@ -109,8 +116,3 @@ post '/posts' do
 	Post.create(title: params[:title], posts: params[:posts], user_id: current_user.id)
 	redirect to('/members')
 end
-
-
-
-
-
