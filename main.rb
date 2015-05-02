@@ -14,12 +14,21 @@ def current_user
 end
 
 get '/'	do
+<<<<<<< HEAD
+	@posts = Post.all	
+	if session[:user_id] == nil
+		@nav = {"Signup" => "/signup","Login" => "/login"}
+	else
+		@nav = {"Add Post" =>"/members", "Profile" => "/profile", "Log Out" => "/logout"}
+	end
+=======
 	if session[:user_id] == nil	
 	@nav = {"Home" => "/", "login" => "/login"}
 else
 	@nav = {"Home" => "/", "logout" => "/logout"}
 end
 	@posts = Post.all.order('created_at DESC')
+>>>>>>> master
 	erb :home
 end	
 

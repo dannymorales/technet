@@ -319,7 +319,26 @@ textarea
 /*_________Completed Profile___ENDS____*/
 
 
+.wrapper_members{
+	width: 100
+}
+.column_one_members{
+/* 	width:30%;*/
+ 	height: auto;
+ 	display: inline-block;
+ 	float:left;
+	margin-left:-10px;
+	margin-right: 50px;
+}
+.column_two_members{
+	/*width:50%;*/
+	height: auto;
+ 	display: inline-block;
+ 	float:right;
+	margin-left:-10px;
+	margin-right: 50px;
 
+}
 
 
 
