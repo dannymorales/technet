@@ -1,16 +1,16 @@
-<h2>this is your profile information</h2>
-<p>
-Name: <%= @user.fname %><br>
-Last name: <%= @user.lname %><br>
-Address: <%= @user.address %><br>
-City<%= @user.city %><br>
-State<%= @user.state %><br>
-Zip code<%= @user.zipcode %><br>
-Country<%= @user.country %>
-Email<%= @user.email %>
+<h2 class="profile_h2"> Your Profile Information</h2>
 
-<a href="/members">My page</a>
-<a href="/profile">Update my profile</a>
+<div class="comp_profile">
+	<p><b>Name  </b> <%= @user.fname %><br>
+	<b>Last name  </b> <%= @user.lname %><br>
+	<b>Address </b><%= @user.address %><br>
+	<b>City </b><%= @user.city %><br>
+	<b>State </b><%= @user.state %><br>
+	<b>Zip code  </b><%= @user.zipcode %><br>
+	<b>Country  </b><%= @user.country %>
+	<b>Email  </b><%= @user.email %>
+	</p>
+	<!-- <a href="/members">My page</a>
+	<a href="/profile">Update my profile</a> -->
+</div>
 
-
-</p>

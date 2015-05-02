@@ -14,7 +14,11 @@ def current_user
 end
 
 get '/'	do
+	if session[:user_id] == nil	
 	@nav = {"Home" => "/", "login" => "/login"}
+else
+	@nav = {"Home" => "/", "logout" => "/logout"}
+end
 	@posts = Post.all.order('created_at DESC')
 	erb :home
 end	
@@ -112,10 +116,3 @@ post '/posts' do
 	Post.create(title: params[:title], posts: params[:posts], user_id: current_user.id)
 	redirect to('/members')
 end
-
-
-
-
-
-
-
