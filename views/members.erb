@@ -2,19 +2,24 @@
 
 <div class="notice"><%= flash[:notice] if flash[:notice] %></div>
 
-<div class="wrapper_members">
-	<h2 class="h2_members_post">New Post</h2>
-		<div class="column_two_members">
+
+	<div class="p">
+	<p><span id="members_posts"> Your Posts </span>
+	<span id="new_post">New Post</span></p>
+ 	</div>
+	<div class="wrapper_members">
+	<div class="column_one_members">
 		<% @posts.each do |post| %>
 		<h4> <%= post.title %></h4>
 		<p>	<%= post.posts %></p>
 		<% end %>
 	</div>
-	<div class="column_one_members"id="allposts">
+
+	<div class="column_two_members"id="allposts">
 		<form id="post" action="/posts" method="POST">
 			<input id="title" class="input" type="text" name="title" placeholder="Enter post title"><br>
 			<textarea name="posts" id="posts" cols="100" rows="3"></textarea><br>
-			<input class="submit" type="submit" value="Post">
+			<input id="submit_post"class="submit" type="submit" value="Post">
 		</form>
 	</div>
 </div>
