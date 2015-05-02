@@ -93,22 +93,28 @@ footer{
 	text-align: center;
 	font-family: Times;
 	font-style: italic;
-	margin-left:-20px; }
- span{
+	margin-left:-20px; 
+	padding-bottom: 60px;
+	text-shadow:3px -3px 2px rgba(59,0,52,.2);
+}
+ span,#network{
 	font-family: Helveticaƒ;
 	font-size: 60px;
 	font-style: italic;
 	color: rgb(255, 255, 255);
+	font-weight: normal;
 }
-#technet{
+span,#technet{
 	font-family: Times;
 	font-size: 80px;
-	color: black;
-	z-index: ;
-}
+	color: rgb(59,0,52);
+	font-weight: bold;
+	text-shadow:5px -3px 2px rgba(59,0,52,.2);
+	}
 .topics{
 	font-family: Helvetica;
 	text-align: center;
+	text-shadow:1px 1px 1px rgba(59,0,52,.2);
 }
 .wrapper_one_home{
 	font-family: Times;
@@ -144,6 +150,7 @@ footer{
 background-color: rgba(0, 0, 0,.2);
 }
 .column_two_home{
+	font-family: Times;
 	width:50%;
 	height: auto;
 	display: inline-block;
@@ -151,6 +158,7 @@ background-color: rgba(0, 0, 0,.2);
  	text-align:center;
 }
 .posts p {
+	font-family: Times;
 	font-style: italic;
 	background-color: rgba(255, 255, 255,.7);
 	text-align: left;
@@ -162,9 +170,11 @@ background-color: rgba(0, 0, 0,.2);
 }*/
 #pspan{
 	font-size: 20px;
-	font-family: Arial;
+	font-family: Times;
 	color:#413E41;
 	font-style: normal;
+/*	font-weight: bold;
+*/	text-shadow:1px 1px 1px rgba(59,0,52,.2);
 }
 .column_three_home{
 	width:25%;
@@ -288,12 +298,28 @@ form input .submit{
 }
 /*_________Profile ends________*/
 /*_________Members/add posts________*/
-.h2_members_post{
-	text-align: center;
+
+.p p{
+	margin-bottom: 0px;
+}
+#new_post, #members_posts{
+ 	color: #3B0034;	
+ 	font-family: courier;
+ 	font-size: 26px;
+ 	font-weight: bolder;
+ 	text-shadow: 1px 1px gray;
+}
+#new_post{
+	padding-right:-95px
+}
+#members_posts{
+	text-align: left;
+	 padding-right:327px;
+ 	 padding-left: 278px;
 }
 #post{
 	width:500px;
-	margin-left: 24%;
+	margin-left: 2%;
 	clear: both;
 	margin-top: 0px;
 	margin-bottom: 0px;
@@ -303,6 +329,42 @@ textarea
 	width: 400px;
 	height:100px;
 }
+
+.wrapper_members{
+	width:800px;
+}
+.column_one_members{
+	width: 400px;
+
+/* 	width:30%;*/
+ 	height: auto;
+ 	display: inline-block;
+ 	float:left;
+	margin-left: 149px;
+	text-align: center;
+	margin-top: -15px;
+
+}
+.column_two_members{
+	/*width:50%;*/
+	width: 300px;
+	height: auto;
+ 	display: inline-block;
+ 	float:right;
+ 	margin-right: -49px;
+ 	text-align: left;
+	/*margin-left:-10px;
+	margin-right: 50px;*/
+
+}
+#submit_post{
+	margin-left:22%;
+}
+#submit_post:hover{
+	background-color: rgba(59,0,52,.75);
+	color: rgba(255,255,255,.6);
+}
+
 /*_________Members/add posts_ENDS_______*/
 /*_________Completed Profile_______*/
 .comp_profile{
@@ -319,26 +381,6 @@ textarea
 /*_________Completed Profile___ENDS____*/
 
 
-.wrapper_members{
-	width: 100
-}
-.column_one_members{
-/* 	width:30%;*/
- 	height: auto;
- 	display: inline-block;
- 	float:left;
-	margin-left:-10px;
-	margin-right: 50px;
-}
-.column_two_members{
-	/*width:50%;*/
-	height: auto;
- 	display: inline-block;
- 	float:right;
-	margin-left:-10px;
-	margin-right: 50px;
-
-}
 
 
 
