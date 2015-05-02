@@ -3,6 +3,18 @@
 <div class="notice"><%= flash[:notice] if flash[:notice] %></div>
 
 
+<h2>New Post</h2>
+
+<div id="allposts">
+	
+	<form id="post" action="/posts" method="POST">
+		<input id="title" class="input" type="text" name="title" placeholder="Enter post title"><br>
+		<textarea name="posts" id="posts" cols="100" rows="3"></textarea><br>
+		<input class="submit" type="submit" value="Submit your post">
+
+	</form>
+
+</div>
 
 	<% @posts.each do |post| %>
 
