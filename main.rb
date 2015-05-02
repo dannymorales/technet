@@ -16,7 +16,11 @@ end
 
 get '/'	do
 	@posts = Post.all	
-	@nav = {"Signup" => "/signup","Login" => "/login"}
+	if session[:user_id] == nil
+		@nav = {"Signup" => "/signup","Login" => "/login"}
+	else
+		@nav = {"Add Post" =>"/members", "Profile" => "/profile", "Log Out" => "/logout"}
+	end
 	erb :home
 end	
 
