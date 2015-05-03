@@ -9,6 +9,7 @@
 	<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.0/themes/base/jquery-ui.css">
 	<link rel="stylesheet" href="/styles/style.css">
 	<script type="text/javascript" src="/javascript/scripts.js"></script>
+	
 </head>
 <body>
 	<div class="wrapper_nav">
@@ -16,7 +17,7 @@
 			
 			<ul>
 			<span id="hello">
-			<%= "Hello #{@c_user} !"%>
+			<%= @c_user %>
 			</span>
 			<!--loop for nav_bar -->
 			<% @nav.each do |key, value| %>

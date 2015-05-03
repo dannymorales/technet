@@ -13,13 +13,15 @@ def current_user
 	session[:user_id] ? User.find(session[:user_id]) : nil
 end
 
+
+
 get '/'	do
-	@posts = Post.all
+	@posts = Post.all.order('created_at DESC')
 	if session[:user_id] == nil
 		@nav = {"Signup" => "/signup","Login" => "/login"}
 	else
-		@nav = {"Add Post" =>"/members", "Profile" => "/profile", "Log Out" => "/logout"}
-		@c_user= User.find(session[:user_id]).fname	
+		@nav = {"Add Post" =>"/members", "Profile" => "/completedprofile", "Log Out" => "/logout"}
+		@c_user= "hello #{User.find(session[:user_id]).fname}"
 	end
 	erb :home
 end	
@@ -49,7 +51,7 @@ get '/logout' do
 end
 
 get '/loggedout' do
-	@c_user=User.find(session[:user_id]).fname		
+	@c_user= "bye #{User.find(session[:user_id]).fname}"		
 	erb :loggedout
 end
 
@@ -61,7 +63,7 @@ get '/members' do
 	@nav = {"Home" => "/", "logout" => "/logout"}
 	@user = User.find_by(id: current_user.id)
 	@posts = @user.posts.order('created_at DESC')
-	@c_user= User.find(session[:user_id]).fname		
+	@c_user= "hello #{User.find(session[:user_id]).fname}"	
 	erb :members
 end
 
@@ -83,7 +85,7 @@ get '/profile' do
 		redirect to ('/login')
 	end
 	@nav = {"Home" => "/", "logout" => "/logout"}
-	@c_user= User.find(session[:user_id]).fname		
+	@c_user= "hello #{User.find(session[:user_id]).fname}"	
 	erb :profile
 end
 
@@ -102,7 +104,7 @@ get '/completedprofile' do
 	end
 	@nav = {"Home" => "/", "logout" => "/logout"}
 	@user = User.last
-	@c_user= User.find(session[:user_id]).fname	
+	@c_user= "hello #{User.find(session[:user_id]).fname}"	
 	erb :completedprofile
 end
 
