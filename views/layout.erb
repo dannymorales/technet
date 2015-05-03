@@ -13,7 +13,11 @@
 <body>
 	<div class="wrapper_nav">
 		<nav>
+			
 			<ul>
+			<span id="hello">
+			<%= "Hello #{@c_user} !"%>
+			</span>
 			<!--loop for nav_bar -->
 			<% @nav.each do |key, value| %>
 				<li>

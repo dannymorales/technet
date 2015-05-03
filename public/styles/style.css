@@ -4,6 +4,23 @@ html{
 	height:auto;
 
 }
+.hello{
+	margin-bottom: -28px;
+	text-align: center;
+	font-size: 30px;
+	text-shadow:3px -3px 2px rgba(59,0,52,.2);
+}
+#hello{
+	font-family: Times;
+	margin-bottom: -28px;
+	text-align: center;
+	font-size: 30px;
+	color: #986592;
+	text-shadow:3px -4px 10px rgba(0,0,0,.6);
+	font-style: normal;	
+	font-weight: normal;
+}
+
 /*_________LAYOUT________*/
 body{
 	width: 100%;

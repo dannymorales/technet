@@ -1,3 +1,7 @@
+<p class="hello">
+	<%="Hello #{@c_user}!"%>
+	</p>
+
 <h2 class="profile_h2"> Your Profile Information</h2>
 
 <div class="comp_profile">
@@ -7,10 +11,10 @@
 	<b>City </b><%= @user.city %><br>
 	<b>State </b><%= @user.state %><br>
 	<b>Zip code  </b><%= @user.zipcode %><br>
-	<b>Country  </b><%= @user.country %>
+	<b>Country  </b><%= @user.country %> <br>
 	<b>Email  </b><%= @user.email %>
 	</p>
-	<!-- <a href="/members">My page</a>
+		<!-- <a href="/">My page</a>
 	<a href="/profile">Update my profile</a> -->
 </div>
 

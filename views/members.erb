@@ -2,7 +2,6 @@
 
 <div class="notice"><%= flash[:notice] if flash[:notice] %></div>
 
-
 	<div class="p">
 	<p><span id="members_posts"> Your Posts </span>
 	<span id="new_post">New Post</span></p>
@@ -14,6 +13,7 @@
 		<p>	<%= post.posts %></p>
 		<% end %>
 	</div>
+
 
 	<div class="column_two_members"id="allposts">
 		<form id="post" action="/posts" method="POST">

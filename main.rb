@@ -14,11 +14,12 @@ def current_user
 end
 
 get '/'	do
-	@posts = Post.all	
+	@posts = Post.all
 	if session[:user_id] == nil
 		@nav = {"Signup" => "/signup","Login" => "/login"}
 	else
 		@nav = {"Add Post" =>"/members", "Profile" => "/profile", "Log Out" => "/logout"}
+		@c_user= User.find(session[:user_id]).fname	
 	end
 	erb :home
 end	
@@ -48,6 +49,7 @@ get '/logout' do
 end
 
 get '/loggedout' do
+	@c_user=User.find(session[:user_id]).fname		
 	erb :loggedout
 end
 
@@ -59,6 +61,7 @@ get '/members' do
 	@nav = {"Home" => "/", "logout" => "/logout"}
 	@user = User.find_by(id: current_user.id)
 	@posts = @user.posts.order('created_at DESC')
+	@c_user= User.find(session[:user_id]).fname		
 	erb :members
 end
 
@@ -80,6 +83,7 @@ get '/profile' do
 		redirect to ('/login')
 	end
 	@nav = {"Home" => "/", "logout" => "/logout"}
+	@c_user= User.find(session[:user_id]).fname		
 	erb :profile
 end
 
@@ -91,8 +95,6 @@ post '/profile' do
 	redirect to('/completedprofile')
 end
 
-
-
 get '/completedprofile' do
 	if session[:user_id] == nil
 		flash[:alert] = "you must be logged in to access this page"
@@ -100,6 +102,7 @@ get '/completedprofile' do
 	end
 	@nav = {"Home" => "/", "logout" => "/logout"}
 	@user = User.last
+	@c_user= User.find(session[:user_id]).fname	
 	erb :completedprofile
 end
 
